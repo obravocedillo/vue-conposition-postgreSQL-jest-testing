@@ -19,7 +19,7 @@
     </div>
     <h2>Servers in system</h2>
     <div class="serverlist-server-list">
-      <div class="serverlist-single-server" v-for="(item,index) in servers" v-bind:key="index">
+      <div class="serverlist-single-server" v-for="(item,index) in servers" v-bind:key="index" data-testid="single-server">
         <p class="serverlist-single-server-name">
             {{item.name}}
         </p>
