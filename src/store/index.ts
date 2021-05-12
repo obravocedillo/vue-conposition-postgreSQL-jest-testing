@@ -1,23 +1,22 @@
 import { createStore } from 'vuex';
 import { State } from '../interface/State';
+import { Server } from '../interface/Server';
 
 export default createStore<State>({
   state: {
-    name: 'Oliver',
-    age: 23,
-    firends: [],
+    servers: [],
   },
   getters: {
-    NAME: (state: State):string => state.name,
+    SERVERS: (state: State):Server[] => state.servers,
   },
   mutations: {
-    SET_NAME: (state:State, payload: string) => {
-      state.name = payload;
+    ADD_SERVER: (state:State, payload: Server) => {
+      state.servers.push(payload);
     },
   },
   actions: {
-    CHANGE_NAME: (context, payload: string) => {
-      context.commit('SET_NAME', payload);
+    ADD_NEW_SERVER: (context, payload: Server) => {
+      context.commit('ADD_SERVER', payload);
     },
   },
   modules: {

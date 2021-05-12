@@ -1,7 +1,5 @@
-import { Friend } from './Friend';
+import { Server } from './Server';
 
 export interface State {
-    name: string,
-    age: number,
-    firends: Friend[]
+    servers: Server[],
 }
