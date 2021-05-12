@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1 data-testid="main-name">{{ name }}</h1>
+    <button @click="changeName()" data-testid="change-name">Change name</button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -35,12 +36,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { computed, ComputedRef, defineComponent } from 'vue';
+import { useStore } from 'vuex';
 
 export default defineComponent({
   name: 'HelloWorld',
   props: {
     msg: String,
+  },
+  setup() {
+    const store = useStore();
+    const name:ComputedRef<string> = computed(() => store.getters.NAME);
+    const changeName = ():void => {
+      store.dispatch('CHANGE_NAME', 'Brandon');
+    };
+    return {
+      name,
+      changeName,
+    };
   },
 });
 </script>
