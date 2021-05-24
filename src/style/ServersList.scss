@@ -1,6 +1,6 @@
 $status-width: 33%;
 
-@mixin servers-list-center {
+@mixin servers-list-center() {
     width: 40%;
     margin-left: 30%;
     margin-right: 30%;
