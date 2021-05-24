@@ -1,0 +1,71 @@
+$status-width: 33%;
+
+@mixin servers-list-center() {
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.serverslist-main-container{
+    h2{
+        @include servers-list-center();
+        color: #2c3e50;
+        text-align: start;
+    }
+    margin-top: 3rem;
+}
+
+.serverslist-status-list{
+    display: flex;
+    flex-direction: row;
+    @include servers-list-center();
+}
+
+.serverslist-up{
+    width: $status-width;
+    text-align: start;
+    ::before{
+        font-size: 1.2rem;
+        content:"• ";
+        color: green;
+    }
+}
+
+.serverslist-maintenance{
+    width: $status-width;
+    ::before{
+        font-size: 1.2rem;
+        content:"• ";
+        color: rgb(173, 99, 35);
+    }
+}
+
+.serverslist-down{
+    text-align: end;
+    width: $status-width;
+    ::before{
+        font-size: 1.2rem;
+        content:"• ";
+        color: rgb(181, 36, 25);
+    }
+}
+
+.serverlist-server-list{
+    display: flex;
+    flex-direction: column;   
+    @include servers-list-center();
+}
+
+.serverlist-single-server{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    .serverlist-single-server-name{
+        width: 80%;
+        text-align: start;
+    }
+    .serverlist-single-server-status{
+        width: 20%;
+        text-align: end;
+    }
+}
