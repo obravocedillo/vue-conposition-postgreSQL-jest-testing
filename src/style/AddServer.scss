@@ -1,0 +1,32 @@
+$form-width: 33%;
+
+.add-server{
+    width: 100%;
+}
+.add-server-form-contaner{
+    display: flex;
+    flex-direction: column;
+    width: $form-width;
+    margin-left: 33.5%;
+    margin-right: 33.5%;
+    margin-top: 1rem;
+
+    input{
+        margin-bottom: 1rem;
+        padding-top: .4rem;
+        padding-bottom: .4rem;
+    }
+
+    select{
+        margin-bottom: 1rem;
+        padding-top: .4rem;
+        padding-bottom: .4rem;
+    }
+
+    button{
+        margin-bottom: 1rem;
+        padding-top: .4rem;
+        padding-bottom: .4rem;
+        cursor: pointer;
+    }
+}

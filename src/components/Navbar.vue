@@ -14,12 +14,12 @@
     <!-- navigation items -->
     <div class="navigation-item-container" data-testid="navigation-item">
       <div class="navigation-item">
-        <p>
+        <p @click="changeView('/')">
           Servidores
         </p>
       </div>
       <div class="navigation-item">
-        <p>
+        <p @click="changeView('/add-server')">
           Añadir Servidor
         </p>
       </div>
@@ -31,9 +31,22 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   name: 'Navbar',
+  setup(){
+    const router = useRouter()
+    const changeView = (url: string):void => {
+      router.push({
+        path: url,
+      })
+    }
+
+    return {
+      changeView
+    }
+  }
 });
 </script>
 

@@ -15,3 +15,18 @@ body{
   padding: 0;
 }
 </style>
+
+<script lang="ts">
+import {defineComponent, onMounted} from 'vue';
+import { useStore } from 'vuex';
+
+export default defineComponent({
+  name: 'App',
+  setup() {
+    const store = useStore();
+    onMounted(async (): Promise<void> => {
+      await store.dispatch('GET_SERVERS');
+    });
+  },
+});
+</script>

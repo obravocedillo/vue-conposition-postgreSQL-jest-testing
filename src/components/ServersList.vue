@@ -23,9 +23,21 @@
         <p class="serverlist-single-server-name">
             {{item.name}}
         </p>
-        <p class="serverlist-single-server-status">
-            {{item.status}}
-        </p>
+        <div class="serverslist-up serverlist-single-server-status" v-if="item.status === 1">
+          <p>
+            
+          </p>
+        </div>
+         <div class="serverslist-maintenance serverlist-single-server-status" v-if="item.status === 2">
+          <p>
+            
+          </p>
+        </div>
+         <div class="serverslist-down serverlist-single-server-status" v-if="item.status === 3">
+          <p>
+            
+          </p>
+        </div>
       </div>
     </div>
   </div>
